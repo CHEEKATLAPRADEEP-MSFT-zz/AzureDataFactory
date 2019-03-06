@@ -1,0 +1,30 @@
+{
+	"name": "AzureDataLakeStorageFile1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlobFSFile",
+		"structure": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"fileName": "name.txt",
+			"folderPath": "input"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
