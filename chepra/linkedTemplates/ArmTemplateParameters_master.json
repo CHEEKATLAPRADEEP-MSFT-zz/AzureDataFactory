@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "chepra"
+		},
+		"integrationRuntime_chepraIR": {
+			"value": "chepraIR"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
+			"value": "name.txt"
+		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
+			"value": "input"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://chepra.dfs.core.windows.net"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f/resourceGroups/chpradeep/providers/Microsoft.Storage/storageAccounts/chepra"
+		}
+	}
+}
