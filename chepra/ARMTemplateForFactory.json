@@ -62,7 +62,7 @@
 						"typeProperties": {
 							"source": {
 								"type": "AzureBlobFSSource",
-								"recursive": true
+								"recursive": false
 							},
 							"sink": {
 								"type": "SqlSink",
