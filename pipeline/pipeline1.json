@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Data1",
-				"type": "Copy",
+				"name": "Hive1",
+				"type": "HDInsightHive",
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -13,34 +13,19 @@
 					"secureInput": false
 				},
 				"typeProperties": {
-					"source": {
-						"type": "AzureBlobFSSource",
-						"recursive": false
+					"scriptPath": "adf/hivescript.hql",
+					"defines": {
+						"Output": "wasb://adf@cheprahdi.blob.core.windows.net/outputfolder/"
 					},
-					"sink": {
-						"type": "SqlSink",
-						"writeBatchSize": 10000
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"columnMappings": {
-							"Prop_0": "PersonID"
-						}
+					"scriptLinkedService": {
+						"referenceName": "cheprastorage",
+						"type": "LinkedServiceReference"
 					}
 				},
-				"inputs": [
-					{
-						"referenceName": "AzureDataLakeStorageFile1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
-					}
-				]
+				"linkedServiceName": {
+					"referenceName": "linkedService10",
+					"type": "LinkedServiceReference"
+				}
 			}
 		]
 	},
