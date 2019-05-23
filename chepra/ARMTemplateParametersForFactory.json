@@ -8,10 +8,37 @@
 		"integrationRuntime_chepraIR": {
 			"value": "chepraIR"
 		},
+		"integrationRuntime_integrationRuntime1": {
+			"value": "integrationRuntime1"
+		},
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
 		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"linkedService10_clusterPassword": {
+			"value": ""
+		},
+		"linkedService10_clusterSshPassword": {
+			"value": ""
+		},
+		"linkedService10_servicePrincipalKey": {
+			"value": ""
+		},
+		"cheprastorage_connectionString": {
+			"value": ""
+		},
+		"linkedService11_clusterPassword": {
+			"value": ""
+		},
+		"linkedService11_clusterSshPassword": {
+			"value": ""
+		},
+		"linkedService11_servicePrincipalKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
@@ -23,8 +50,44 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://chepra.dfs.core.windows.net"
 		},
+		"linkedService10_properties_typeProperties_hostSubscriptionId": {
+			"value": "b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f"
+		},
+		"linkedService10_properties_typeProperties_clusterResourceGroup": {
+			"value": "chpradeep"
+		},
+		"linkedService10_properties_typeProperties_servicePrincipalId": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"linkedService10_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"linkedService10_properties_typeProperties_clusterUserName": {
+			"value": "chepra"
+		},
+		"linkedService10_properties_typeProperties_clusterSshUserName": {
+			"value": "chepra"
+		},
 		"trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f/resourceGroups/chpradeep/providers/Microsoft.Storage/storageAccounts/chepra"
+		},
+		"linkedService11_properties_typeProperties_hostSubscriptionId": {
+			"value": "b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f"
+		},
+		"linkedService11_properties_typeProperties_clusterResourceGroup": {
+			"value": "chpradeep"
+		},
+		"linkedService11_properties_typeProperties_servicePrincipalId": {
+			"value": "cd0da9b0-e638-4d36-8bba-0a98c1001966"
+		},
+		"linkedService11_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"linkedService11_properties_typeProperties_clusterUserName": {
+			"value": "chepra"
+		},
+		"linkedService11_properties_typeProperties_clusterSshUserName": {
+			"value": "chepra"
 		}
 	}
 }
