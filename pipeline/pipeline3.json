@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline3",
 	"properties": {
 		"activities": [
 			{
@@ -16,7 +16,6 @@
 				"userProperties": [],
 				"typeProperties": {
 					"jarFilePath": "adfsamples/jars/hadoop-mapreduce-examples.jar",
-					"getDebugInfo": "Always",
 					"className": "wordcount",
 					"jarLibs": [],
 					"jarLinkedService": {

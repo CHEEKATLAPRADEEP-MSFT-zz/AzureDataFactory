@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline2",
 	"properties": {
 		"activities": [
 			{
-				"name": "MapReduce1",
+				"name": "MR-WC",
 				"type": "HDInsightMapReduce",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,6 @@
 				"userProperties": [],
 				"typeProperties": {
 					"jarFilePath": "adfsamples/jars/hadoop-mapreduce-examples.jar",
-					"getDebugInfo": "Always",
 					"className": "wordcount",
 					"jarLibs": [],
 					"jarLinkedService": {

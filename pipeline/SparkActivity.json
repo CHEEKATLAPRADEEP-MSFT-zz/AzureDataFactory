@@ -1,10 +1,10 @@
 {
-	"name": "pipeline1",
+	"name": "SparkActivity",
 	"properties": {
 		"activities": [
 			{
-				"name": "MapReduce1",
-				"type": "HDInsightMapReduce",
+				"name": "Spark1",
+				"type": "HDInsightSpark",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,17 +15,15 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"jarFilePath": "adfsamples/jars/hadoop-mapreduce-examples.jar",
-					"getDebugInfo": "Always",
-					"className": "wordcount",
-					"jarLibs": [],
-					"jarLinkedService": {
+					"rootPath": "adftutorial/spark/script",
+					"entryFilePath": "WordCount_Spark.py",
+					"sparkJobLinkedService": {
 						"referenceName": "AzureBlobStorage1",
 						"type": "LinkedServiceReference"
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "genreal_hdp",
+					"referenceName": "HDInsight",
 					"type": "LinkedServiceReference"
 				}
 			}
