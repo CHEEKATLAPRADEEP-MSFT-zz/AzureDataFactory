@@ -8,6 +8,9 @@
 		"integrationRuntime_self-hosted": {
 			"value": "self-hosted"
 		},
+		"integrationRuntime_integrationRuntime1": {
+			"value": "integrationRuntime1"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},

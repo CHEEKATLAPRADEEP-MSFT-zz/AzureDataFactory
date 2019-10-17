@@ -12,6 +12,11 @@
 			"metadata": "Integration runtime name",
 			"defaultValue": "self-hosted"
 		},
+		"integrationRuntime_integrationRuntime1": {
+			"type": "string",
+			"metadata": "Integration runtime name",
+			"defaultValue": "integrationRuntime1"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
@@ -298,6 +303,9 @@
 					"integrationRuntime_self-hosted": {
 						"value": "[parameters('integrationRuntime_self-hosted')]"
 					},
+					"integrationRuntime_integrationRuntime1": {
+						"value": "[parameters('integrationRuntime_integrationRuntime1')]"
+					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
@@ -331,15 +339,6 @@
 					"FileServer1_password": {
 						"value": "[parameters('FileServer1_password')]"
 					},
-					"HDInsight_clusterPassword": {
-						"value": "[parameters('HDInsight_clusterPassword')]"
-					},
-					"HDInsight_clusterSshPassword": {
-						"value": "[parameters('HDInsight_clusterSshPassword')]"
-					},
-					"HDInsight_servicePrincipalKey": {
-						"value": "[parameters('HDInsight_servicePrincipalKey')]"
-					},
 					"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
 						"value": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_accountName')]"
 					},
@@ -372,18 +371,6 @@
 					},
 					"FileServer1_properties_typeProperties_userId": {
 						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
-					},
-					"HDInsight_properties_typeProperties_hostSubscriptionId": {
-						"value": "[parameters('HDInsight_properties_typeProperties_hostSubscriptionId')]"
-					},
-					"HDInsight_properties_typeProperties_clusterResourceGroup": {
-						"value": "[parameters('HDInsight_properties_typeProperties_clusterResourceGroup')]"
-					},
-					"HDInsight_properties_typeProperties_servicePrincipalId": {
-						"value": "[parameters('HDInsight_properties_typeProperties_servicePrincipalId')]"
-					},
-					"HDInsight_properties_typeProperties_tenant": {
-						"value": "[parameters('HDInsight_properties_typeProperties_tenant')]"
 					}
 				}
 			},
@@ -402,6 +389,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"HDInsight_clusterPassword": {
+						"value": "[parameters('HDInsight_clusterPassword')]"
+					},
+					"HDInsight_clusterSshPassword": {
+						"value": "[parameters('HDInsight_clusterSshPassword')]"
+					},
+					"HDInsight_servicePrincipalKey": {
+						"value": "[parameters('HDInsight_servicePrincipalKey')]"
 					},
 					"chepra_clusterPassword": {
 						"value": "[parameters('chepra_clusterPassword')]"
@@ -438,6 +434,18 @@
 					},
 					"linkedService11_servicePrincipalKey": {
 						"value": "[parameters('linkedService11_servicePrincipalKey')]"
+					},
+					"HDInsight_properties_typeProperties_hostSubscriptionId": {
+						"value": "[parameters('HDInsight_properties_typeProperties_hostSubscriptionId')]"
+					},
+					"HDInsight_properties_typeProperties_clusterResourceGroup": {
+						"value": "[parameters('HDInsight_properties_typeProperties_clusterResourceGroup')]"
+					},
+					"HDInsight_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('HDInsight_properties_typeProperties_servicePrincipalId')]"
+					},
+					"HDInsight_properties_typeProperties_tenant": {
+						"value": "[parameters('HDInsight_properties_typeProperties_tenant')]"
 					},
 					"chepra_properties_typeProperties_hostSubscriptionId": {
 						"value": "[parameters('chepra_properties_typeProperties_hostSubscriptionId')]"
