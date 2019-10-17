@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Batsmen.csv",
-				"container": "cricinfo"
+				"fileName": "drivers.csv",
+				"container": "sampledata"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
