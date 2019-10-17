@@ -4,62 +4,97 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory Name",
+			"metadata": "Data Factory name",
 			"defaultValue": "chepra"
 		},
-		"integrationRuntime_chepraIR": {
+		"integrationRuntime_self-hosted": {
 			"type": "string",
-			"metadata": "Integration Runtime Name",
-			"defaultValue": "chepraIR"
+			"metadata": "Integration runtime name",
+			"defaultValue": "self-hosted"
 		},
-		"integrationRuntime_integrationRuntime1": {
-			"type": "string",
-			"metadata": "Integration Runtime Name",
-			"defaultValue": "integrationRuntime1"
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage_chepra_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage_chepra'"
+		},
+		"AzureDataLakeAnalytics_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureDataLakeAnalytics'"
 		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
 		},
-		"linkedService1_connectionString": {
+		"AzureSqlDatabase_Chepra_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase_Chepra'"
 		},
 		"cheprastorage_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'cheprastorage'"
 		},
-		"linkedService10_clusterPassword": {
+		"linkedService1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'clusterPassword' of 'linkedService10'"
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
 		},
-		"linkedService10_clusterSshPassword": {
+		"FileServer1_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'clusterSshPassword' of 'linkedService10'"
+			"metadata": "Secure string for 'password' of 'FileServer1'"
 		},
-		"linkedService10_servicePrincipalKey": {
+		"HDInsight_clusterPassword": {
 			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalKey' of 'linkedService10'"
+			"metadata": "Secure string for 'clusterPassword' of 'HDInsight'"
 		},
-		"linkedService11_clusterPassword": {
+		"HDInsight_clusterSshPassword": {
 			"type": "secureString",
-			"metadata": "Secure string for 'clusterPassword' of 'linkedService11'"
+			"metadata": "Secure string for 'clusterSshPassword' of 'HDInsight'"
 		},
-		"linkedService11_clusterSshPassword": {
+		"HDInsight_servicePrincipalKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'clusterSshPassword' of 'linkedService11'"
+			"metadata": "Secure string for 'servicePrincipalKey' of 'HDInsight'"
 		},
-		"linkedService11_servicePrincipalKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalKey' of 'linkedService11'"
+		"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "chepra"
+		},
+		"AzureDataLakeAnalytics_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "06ec2f57-cf96-4dee-af4c-9bb8efbd60ef"
+		},
+		"AzureDataLakeAnalytics_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureDataLakeAnalytics_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f"
+		},
+		"AzureDataLakeAnalytics_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "Analytics-Resources"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://chepra.dfs.core.windows.net"
+			"defaultValue": "https://chepraadlsgen2.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://chepragen2.dfs.core.windows.net"
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
 			"type": "string",
@@ -69,63 +104,82 @@
 			"type": "string",
 			"defaultValue": "input"
 		},
-		"linkedService10_properties_typeProperties_hostSubscriptionId": {
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\AzureLearn\\"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "CHPRADEE@microsoft.com"
+		},
+		"HDInsight_properties_typeProperties_hostSubscriptionId": {
 			"type": "string",
 			"defaultValue": "b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f"
 		},
-		"linkedService10_properties_typeProperties_clusterResourceGroup": {
+		"HDInsight_properties_typeProperties_clusterResourceGroup": {
 			"type": "string",
-			"defaultValue": "chpradeep"
+			"defaultValue": "Analytics-Resources"
 		},
-		"linkedService10_properties_typeProperties_servicePrincipalId": {
+		"HDInsight_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "06ec2f57-cf96-4dee-af4c-9bb8efbd60ef"
+		},
+		"HDInsight_properties_typeProperties_tenant": {
 			"type": "string",
 			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
-		},
-		"linkedService10_properties_typeProperties_tenant": {
-			"type": "string",
-			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
-		},
-		"linkedService10_properties_typeProperties_clusterUserName": {
-			"type": "string",
-			"defaultValue": "chepra"
-		},
-		"linkedService10_properties_typeProperties_clusterSshUserName": {
-			"type": "string",
-			"defaultValue": "chepra"
-		},
-		"linkedService11_properties_typeProperties_hostSubscriptionId": {
-			"type": "string",
-			"defaultValue": "b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f"
-		},
-		"linkedService11_properties_typeProperties_clusterResourceGroup": {
-			"type": "string",
-			"defaultValue": "chpradeep"
-		},
-		"linkedService11_properties_typeProperties_servicePrincipalId": {
-			"type": "string",
-			"defaultValue": "cd0da9b0-e638-4d36-8bba-0a98c1001966"
-		},
-		"linkedService11_properties_typeProperties_tenant": {
-			"type": "string",
-			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
-		},
-		"linkedService11_properties_typeProperties_clusterUserName": {
-			"type": "string",
-			"defaultValue": "chepra"
-		},
-		"linkedService11_properties_typeProperties_clusterSshUserName": {
-			"type": "string",
-			"defaultValue": "chepra"
-		},
-		"trigger1_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f/resourceGroups/chpradeep/providers/Microsoft.Storage/storageAccounts/chepra"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage_chepra')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage_chepra_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeAnalytics')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDataLakeAnalytics",
+				"typeProperties": {
+					"accountName": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_accountName')]",
+					"servicePrincipalId": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeAnalytics_servicePrincipalKey')]"
+					},
+					"tenant": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_tenant')]",
+					"subscriptionId": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_subscriptionId')]",
+					"resourceGroupName": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_resourceGroupName')]"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -144,6 +198,41 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://centralus.azuredatabricks.net",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"existingClusterId": "0802-090441-honks846"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -152,6 +241,32 @@
 				"type": "AzureSqlDatabase",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase_Chepra')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase_Chepra_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/cheprastorage')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('cheprastorage_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -170,18 +285,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_chepraIR'))]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"description": "selfhosted IR description",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_integrationRuntime1'))]",
+			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_self-hosted'))]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -191,17 +295,42 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/cheprastorage')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/pipeline5')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('cheprastorage_connectionString')]"
-				}
+				"activities": [
+					{
+						"name": "U-SQL1",
+						"type": "DataLakeAnalyticsU-SQL",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"scriptPath": "u-sql/Create database and table.usql",
+							"scriptLinkedService": {
+								"referenceName": "AzureBlobStorage_chepra",
+								"type": "LinkedServiceReference"
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureDataLakeAnalytics",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage_chepra')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeAnalytics')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorageFile1')]",
@@ -264,54 +393,174 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/linkedService10')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase_Chepra",
+					"type": "LinkedServiceReference"
+				},
 				"annotations": [],
-				"type": "HDInsightOnDemand",
+				"type": "AzureSqlTable",
+				"schema": [],
 				"typeProperties": {
-					"clusterType": "hadoop",
-					"clusterSize": 4,
-					"timeToLive": "00:05:00",
-					"version": "3.6",
-					"hostSubscriptionId": "[parameters('linkedService10_properties_typeProperties_hostSubscriptionId')]",
-					"clusterResourceGroup": "[parameters('linkedService10_properties_typeProperties_clusterResourceGroup')]",
-					"servicePrincipalId": "[parameters('linkedService10_properties_typeProperties_servicePrincipalId')]",
-					"osType": "Linux",
-					"tenant": "[parameters('linkedService10_properties_typeProperties_tenant')]",
-					"clusterNamePrefix": "chepra",
-					"clusterUserName": "[parameters('linkedService10_properties_typeProperties_clusterUserName')]",
-					"clusterPassword": {
-						"type": "SecureString",
-						"value": "[parameters('linkedService10_clusterPassword')]"
-					},
-					"clusterSshUserName": "[parameters('linkedService10_properties_typeProperties_clusterSshUserName')]",
-					"clusterSshPassword": {
-						"type": "SecureString",
-						"value": "[parameters('linkedService10_clusterSshPassword')]"
-					},
-					"servicePrincipalKey": {
-						"type": "SecureString",
-						"value": "[parameters('linkedService10_servicePrincipalKey')]"
-					},
-					"linkedServiceName": {
-						"referenceName": "linkedService1",
-						"type": "LinkedServiceReference"
-					},
-					"headNodeSize": "2",
-					"dataNodeSize": "2",
-					"zookeeperNodeSize": "",
-					"subnetName": "",
-					"virtualNetworkId": ""
+					"schema": "dbo",
+					"table": "Drivers"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase_Chepra')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/linkedService11')]",
+			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "sampledata"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "sample"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage_chepra",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Batsmen.csv",
+						"container": "cricinfo"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage_chepra')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/FileServer1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "FileServer",
+				"typeProperties": {
+					"host": "[parameters('FileServer1_properties_typeProperties_host')]",
+					"userId": "[parameters('FileServer1_properties_typeProperties_userId')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('FileServer1_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "[parameters('integrationRuntime_self-hosted')]",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/', parameters('integrationRuntime_self-hosted'))]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HDInsight')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -322,28 +571,31 @@
 					"clusterSize": 4,
 					"timeToLive": "00:05:00",
 					"version": "3.6",
-					"hostSubscriptionId": "[parameters('linkedService11_properties_typeProperties_hostSubscriptionId')]",
-					"clusterResourceGroup": "[parameters('linkedService11_properties_typeProperties_clusterResourceGroup')]",
-					"servicePrincipalId": "[parameters('linkedService11_properties_typeProperties_servicePrincipalId')]",
-					"osType": "Linux",
-					"tenant": "[parameters('linkedService11_properties_typeProperties_tenant')]",
+					"hostSubscriptionId": "[parameters('HDInsight_properties_typeProperties_hostSubscriptionId')]",
+					"clusterResourceGroup": "[parameters('HDInsight_properties_typeProperties_clusterResourceGroup')]",
+					"servicePrincipalId": "[parameters('HDInsight_properties_typeProperties_servicePrincipalId')]",
+					"tenant": "[parameters('HDInsight_properties_typeProperties_tenant')]",
 					"clusterNamePrefix": "chepra",
-					"clusterUserName": "[parameters('linkedService11_properties_typeProperties_clusterUserName')]",
 					"clusterPassword": {
 						"type": "SecureString",
-						"value": "[parameters('linkedService11_clusterPassword')]"
+						"value": "[parameters('HDInsight_clusterPassword')]"
 					},
-					"clusterSshUserName": "[parameters('linkedService11_properties_typeProperties_clusterSshUserName')]",
 					"clusterSshPassword": {
 						"type": "SecureString",
-						"value": "[parameters('linkedService11_clusterSshPassword')]"
+						"value": "[parameters('HDInsight_clusterSshPassword')]"
 					},
 					"servicePrincipalKey": {
 						"type": "SecureString",
-						"value": "[parameters('linkedService11_servicePrincipalKey')]"
+						"value": "[parameters('HDInsight_servicePrincipalKey')]"
 					},
+					"additionalLinkedServiceNames": [
+						{
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						}
+					],
 					"linkedServiceName": {
-						"referenceName": "cheprastorage",
+						"referenceName": "AzureBlobStorage1",
 						"type": "LinkedServiceReference"
 					},
 					"headNodeSize": "",
@@ -354,79 +606,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/cheprastorage')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Hive1",
-						"type": "HDInsightHive",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"scriptPath": "adf/hivescript.hql",
-							"defines": {
-								"Output": "wasb://adf@cheprahdi.blob.core.windows.net/outputfolder/"
-							},
-							"scriptLinkedService": {
-								"referenceName": "cheprastorage",
-								"type": "LinkedServiceReference"
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "linkedService10",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/linkedService10')]",
-				"[concat(variables('factoryId'), '/linkedServices/cheprastorage')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "pipeline1",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/input/",
-					"blobPathEndsWith": "/input",
-					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated",
-						"Microsoft.Storage.BlobDeleted"
-					]
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pipeline1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
 			]
 		}
 	]
