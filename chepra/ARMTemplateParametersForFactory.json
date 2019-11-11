@@ -5,11 +5,14 @@
 		"factoryName": {
 			"value": "chepra"
 		},
-		"integrationRuntime_self-hosted": {
-			"value": "self-hosted"
+		"integrationRuntime_AzureDataFlow": {
+			"value": "AzureDataFlow"
 		},
 		"integrationRuntime_integrationRuntime1": {
 			"value": "integrationRuntime1"
+		},
+		"integrationRuntime_self-hosted": {
+			"value": "self-hosted"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
@@ -24,6 +27,9 @@
 			"value": ""
 		},
 		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks_accessToken": {
 			"value": ""
 		},
 		"AzureDatabricks1_accessToken": {

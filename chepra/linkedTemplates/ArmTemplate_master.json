@@ -7,15 +7,20 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "chepra"
 		},
-		"integrationRuntime_self-hosted": {
+		"integrationRuntime_AzureDataFlow": {
 			"type": "string",
 			"metadata": "Integration runtime name",
-			"defaultValue": "self-hosted"
+			"defaultValue": "AzureDataFlow"
 		},
 		"integrationRuntime_integrationRuntime1": {
 			"type": "string",
 			"metadata": "Integration runtime name",
 			"defaultValue": "integrationRuntime1"
+		},
+		"integrationRuntime_self-hosted": {
+			"type": "string",
+			"metadata": "Integration runtime name",
+			"defaultValue": "self-hosted"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
@@ -36,6 +41,10 @@
 		"AzureDataLakeStorage2_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDatabricks_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks'"
 		},
 		"AzureDatabricks1_accessToken": {
 			"type": "secureString",
@@ -300,11 +309,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"integrationRuntime_self-hosted": {
-						"value": "[parameters('integrationRuntime_self-hosted')]"
+					"integrationRuntime_AzureDataFlow": {
+						"value": "[parameters('integrationRuntime_AzureDataFlow')]"
 					},
 					"integrationRuntime_integrationRuntime1": {
 						"value": "[parameters('integrationRuntime_integrationRuntime1')]"
+					},
+					"integrationRuntime_self-hosted": {
+						"value": "[parameters('integrationRuntime_self-hosted')]"
 					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
@@ -321,6 +333,9 @@
 					"AzureDataLakeStorage2_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
 					},
+					"AzureDatabricks_accessToken": {
+						"value": "[parameters('AzureDatabricks_accessToken')]"
+					},
 					"AzureDatabricks1_accessToken": {
 						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
@@ -335,9 +350,6 @@
 					},
 					"linkedService1_connectionString": {
 						"value": "[parameters('linkedService1_connectionString')]"
-					},
-					"FileServer1_password": {
-						"value": "[parameters('FileServer1_password')]"
 					},
 					"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
 						"value": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_accountName')]"
@@ -365,12 +377,6 @@
 					},
 					"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
 						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_folderPath')]"
-					},
-					"FileServer1_properties_typeProperties_host": {
-						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
-					},
-					"FileServer1_properties_typeProperties_userId": {
-						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
 					}
 				}
 			},
@@ -389,6 +395,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
 					},
 					"HDInsight_clusterPassword": {
 						"value": "[parameters('HDInsight_clusterPassword')]"
@@ -434,6 +443,12 @@
 					},
 					"linkedService11_servicePrincipalKey": {
 						"value": "[parameters('linkedService11_servicePrincipalKey')]"
+					},
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
 					},
 					"HDInsight_properties_typeProperties_hostSubscriptionId": {
 						"value": "[parameters('HDInsight_properties_typeProperties_hostSubscriptionId')]"
