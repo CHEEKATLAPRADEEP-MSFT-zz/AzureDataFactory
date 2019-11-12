@@ -30,7 +30,7 @@
 			}
 		],
 		"parameters": {
-			"input": {
+			"name": {
 				"type": "string",
 				"defaultValue": "/path/filename"
 			}
