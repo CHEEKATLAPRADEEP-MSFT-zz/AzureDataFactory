@@ -32,7 +32,7 @@
 		"parameters": {
 			"name": {
 				"type": "string",
-				"defaultValue": "/path/filename"
+				"defaultValue": "dbfs:/mnt/flightdata/AzureCostAnalysis.csv"
 			}
 		},
 		"annotations": []
