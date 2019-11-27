@@ -339,13 +339,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/adftutorial/mynotebook",
-							"baseParameters": {
-								"input": {
-									"value": "@pipeline().parameters.name",
-									"type": "Expression"
-								}
-							}
+							"notebookPath": "/adftutorial/mynotebook"
 						},
 						"linkedServiceName": {
 							"referenceName": "AzureDatabricks",
@@ -353,12 +347,6 @@
 						}
 					}
 				],
-				"parameters": {
-					"name": {
-						"type": "string",
-						"defaultValue": "dbfs:/mnt/flightdata/AzureCostAnalysis.csv"
-					}
-				},
 				"annotations": []
 			},
 			"dependsOn": [
