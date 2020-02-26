@@ -8,9 +8,6 @@
 		"integrationRuntime_AzureDataFlow": {
 			"value": "AzureDataFlow"
 		},
-		"integrationRuntime_integrationRuntime1": {
-			"value": "integrationRuntime1"
-		},
 		"integrationRuntime_self-hosted": {
 			"value": "self-hosted"
 		},
@@ -93,6 +90,9 @@
 			"value": ""
 		},
 		"linkedService11_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
@@ -208,6 +208,9 @@
 		},
 		"trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f/resourceGroups/chpradeep/providers/Microsoft.Storage/storageAccounts/chepra"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://azurewalagen2.dfs.core.windows.net"
 		}
 	}
 }

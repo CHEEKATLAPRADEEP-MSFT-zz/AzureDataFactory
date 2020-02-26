@@ -12,11 +12,6 @@
 			"metadata": "Integration runtime name",
 			"defaultValue": "AzureDataFlow"
 		},
-		"integrationRuntime_integrationRuntime1": {
-			"type": "string",
-			"metadata": "Integration runtime name",
-			"defaultValue": "integrationRuntime1"
-		},
 		"integrationRuntime_self-hosted": {
 			"type": "string",
 			"metadata": "Integration runtime name",
@@ -129,6 +124,10 @@
 		"linkedService11_servicePrincipalKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalKey' of 'linkedService11'"
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
 			"type": "string",
@@ -282,6 +281,10 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f/resourceGroups/chpradeep/providers/Microsoft.Storage/storageAccounts/chepra"
 		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azurewalagen2.dfs.core.windows.net"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -311,9 +314,6 @@
 					},
 					"integrationRuntime_AzureDataFlow": {
 						"value": "[parameters('integrationRuntime_AzureDataFlow')]"
-					},
-					"integrationRuntime_integrationRuntime1": {
-						"value": "[parameters('integrationRuntime_integrationRuntime1')]"
 					},
 					"integrationRuntime_self-hosted": {
 						"value": "[parameters('integrationRuntime_self-hosted')]"
@@ -351,6 +351,9 @@
 					"linkedService1_connectionString": {
 						"value": "[parameters('linkedService1_connectionString')]"
 					},
+					"AzureDataLakeStorage3_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					},
 					"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
 						"value": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_accountName')]"
 					},
@@ -371,6 +374,9 @@
 					},
 					"AzureDataLakeStorage2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
 					},
 					"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
 						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_fileName')]"
@@ -527,6 +533,26 @@
 					},
 					"linkedService11_properties_typeProperties_clusterSshUserName": {
 						"value": "[parameters('linkedService11_properties_typeProperties_clusterSshUserName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"trigger1_properties_typeProperties_scope": {
 						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
@@ -534,7 +560,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_1')]"
 			]
 		}
 	]

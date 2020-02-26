@@ -12,11 +12,6 @@
 			"metadata": "Integration runtime name",
 			"defaultValue": "AzureDataFlow"
 		},
-		"integrationRuntime_integrationRuntime1": {
-			"type": "string",
-			"metadata": "Integration runtime name",
-			"defaultValue": "integrationRuntime1"
-		},
 		"integrationRuntime_self-hosted": {
 			"type": "string",
 			"metadata": "Integration runtime name",
@@ -66,6 +61,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
 		},
+		"AzureDataLakeStorage3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
+		},
 		"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
 			"type": "string",
 			"defaultValue": "chepra"
@@ -93,6 +92,10 @@
 		"AzureDataLakeStorage2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://chepragen2.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azurewalagen2.dfs.core.windows.net"
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
 			"type": "string",
@@ -301,7 +304,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_integrationRuntime1'))]",
+			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_self-hosted'))]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -311,12 +314,19 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_self-hosted'))]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					}
+				}
 			},
 			"dependsOn": []
 		},
