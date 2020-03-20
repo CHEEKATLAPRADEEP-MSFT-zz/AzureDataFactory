@@ -15,10 +15,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"mainClassName": "org.apache.spark.examples.SparkPi",
+					"mainClassName": "_main_",
+					"parameters": [],
 					"libraries": [
 						{
-							"jar": "dbfs:/libraries SparkPi-assembly-0.1.jar"
+							"egg": "dbfs:/FileStore/jars/hello-1.0-py3.7.egg"
 						}
 					]
 				},
