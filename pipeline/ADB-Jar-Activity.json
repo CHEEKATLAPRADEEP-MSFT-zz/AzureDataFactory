@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"mainClassName": "_main_",
+					"mainClassName": "",
 					"parameters": [],
 					"libraries": [
 						{
