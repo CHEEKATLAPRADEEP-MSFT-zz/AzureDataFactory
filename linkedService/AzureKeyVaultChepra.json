@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyVaultChepra",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://chepra.vault.azure.net/"
+		}
+	}
+}
