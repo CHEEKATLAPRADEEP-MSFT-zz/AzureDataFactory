@@ -7,15 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "chepra"
 		},
-		"integrationRuntime_AzureDataFlow": {
-			"type": "string",
-			"metadata": "Integration runtime name",
-			"defaultValue": "AzureDataFlow"
+		"ADB_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ADB'"
 		},
-		"integrationRuntime_self-hosted": {
-			"type": "string",
-			"metadata": "Integration runtime name",
-			"defaultValue": "self-hosted"
+		"AmazonS31_secretAccessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS31'"
+		},
+		"AmazonS32_secretAccessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS32'"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
@@ -36,6 +38,10 @@
 		"AzureDataLakeStorage2_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
 		},
 		"AzureDatabricks_accessToken": {
 			"type": "secureString",
@@ -125,9 +131,21 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalKey' of 'linkedService11'"
 		},
-		"AzureDataLakeStorage3_accountKey": {
+		"cheprahdi_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
+			"metadata": "Secure string for 'connectionString' of 'cheprahdi'"
+		},
+		"HDIOnDemand_clusterPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterPassword' of 'HDIOnDemand'"
+		},
+		"HDIOnDemand_clusterSshPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterSshPassword' of 'HDIOnDemand'"
+		},
+		"HDIOnDemand_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'HDIOnDemand'"
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
 			"type": "string",
@@ -136,6 +154,14 @@
 		"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "input"
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "AKIAJFL4XMAASAPGMG2A"
+		},
+		"AmazonS32_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "AKIAJFL4XMAASAPGMG2A"
 		},
 		"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
 			"type": "string",
@@ -164,6 +190,14 @@
 		"AzureDataLakeStorage2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://chepragen2.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azurewalagen2.dfs.core.windows.net"
+		},
+		"AzureKeyVaultChepra_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://chepra.vault.azure.net/"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"type": "string",
@@ -281,9 +315,29 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f/resourceGroups/chpradeep/providers/Microsoft.Storage/storageAccounts/chepra"
 		},
-		"AzureDataLakeStorage3_properties_typeProperties_url": {
+		"HDIOnDemand_properties_typeProperties_hostSubscriptionId": {
 			"type": "string",
-			"defaultValue": "https://azurewalagen2.dfs.core.windows.net"
+			"defaultValue": "b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f"
+		},
+		"HDIOnDemand_properties_typeProperties_clusterResourceGroup": {
+			"type": "string",
+			"defaultValue": "chpradee-Analytics"
+		},
+		"HDIOnDemand_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "06ec2f57-cf96-4dee-af4c-9bb8efbd60ef"
+		},
+		"HDIOnDemand_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"HDIOnDemand_properties_typeProperties_clusterUserName": {
+			"type": "string",
+			"defaultValue": "chepra"
+		},
+		"HDIOnDemand_properties_typeProperties_clusterSshUserName": {
+			"type": "string",
+			"defaultValue": "chepra"
 		},
 		"containerUri": {
 			"type": "string",
@@ -312,11 +366,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"integrationRuntime_AzureDataFlow": {
-						"value": "[parameters('integrationRuntime_AzureDataFlow')]"
+					"ADB_accessToken": {
+						"value": "[parameters('ADB_accessToken')]"
 					},
-					"integrationRuntime_self-hosted": {
-						"value": "[parameters('integrationRuntime_self-hosted')]"
+					"AmazonS31_secretAccessKey": {
+						"value": "[parameters('AmazonS31_secretAccessKey')]"
+					},
+					"AmazonS32_secretAccessKey": {
+						"value": "[parameters('AmazonS32_secretAccessKey')]"
 					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
@@ -332,6 +389,9 @@
 					},
 					"AzureDataLakeStorage2_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"AzureDataLakeStorage3_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
 					},
 					"AzureDatabricks_accessToken": {
 						"value": "[parameters('AzureDatabricks_accessToken')]"
@@ -351,8 +411,14 @@
 					"linkedService1_connectionString": {
 						"value": "[parameters('linkedService1_connectionString')]"
 					},
-					"AzureDataLakeStorage3_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					"cheprahdi_connectionString": {
+						"value": "[parameters('cheprahdi_connectionString')]"
+					},
+					"AmazonS31_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('AmazonS31_properties_typeProperties_accessKeyId')]"
+					},
+					"AmazonS32_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('AmazonS32_properties_typeProperties_accessKeyId')]"
 					},
 					"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
 						"value": "[parameters('AzureDataLakeAnalytics_properties_typeProperties_accountName')]"
@@ -378,11 +444,8 @@
 					"AzureDataLakeStorage3_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
 					},
-					"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
-						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_fileName')]"
-					},
-					"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
-						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_folderPath')]"
+					"AzureKeyVaultChepra_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVaultChepra_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},
@@ -449,6 +512,21 @@
 					},
 					"linkedService11_servicePrincipalKey": {
 						"value": "[parameters('linkedService11_servicePrincipalKey')]"
+					},
+					"HDIOnDemand_clusterPassword": {
+						"value": "[parameters('HDIOnDemand_clusterPassword')]"
+					},
+					"HDIOnDemand_clusterSshPassword": {
+						"value": "[parameters('HDIOnDemand_clusterSshPassword')]"
+					},
+					"HDIOnDemand_servicePrincipalKey": {
+						"value": "[parameters('HDIOnDemand_servicePrincipalKey')]"
+					},
+					"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
+						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_fileName')]"
+					},
+					"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
+						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_folderPath')]"
 					},
 					"FileServer1_properties_typeProperties_host": {
 						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
@@ -533,6 +611,24 @@
 					},
 					"linkedService11_properties_typeProperties_clusterSshUserName": {
 						"value": "[parameters('linkedService11_properties_typeProperties_clusterSshUserName')]"
+					},
+					"HDIOnDemand_properties_typeProperties_hostSubscriptionId": {
+						"value": "[parameters('HDIOnDemand_properties_typeProperties_hostSubscriptionId')]"
+					},
+					"HDIOnDemand_properties_typeProperties_clusterResourceGroup": {
+						"value": "[parameters('HDIOnDemand_properties_typeProperties_clusterResourceGroup')]"
+					},
+					"HDIOnDemand_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('HDIOnDemand_properties_typeProperties_servicePrincipalId')]"
+					},
+					"HDIOnDemand_properties_typeProperties_tenant": {
+						"value": "[parameters('HDIOnDemand_properties_typeProperties_tenant')]"
+					},
+					"HDIOnDemand_properties_typeProperties_clusterUserName": {
+						"value": "[parameters('HDIOnDemand_properties_typeProperties_clusterUserName')]"
+					},
+					"HDIOnDemand_properties_typeProperties_clusterSshUserName": {
+						"value": "[parameters('HDIOnDemand_properties_typeProperties_clusterSshUserName')]"
 					}
 				}
 			},

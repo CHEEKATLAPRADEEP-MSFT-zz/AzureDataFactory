@@ -5,11 +5,14 @@
 		"factoryName": {
 			"value": "chepra"
 		},
-		"integrationRuntime_AzureDataFlow": {
-			"value": "AzureDataFlow"
+		"ADB_accessToken": {
+			"value": ""
 		},
-		"integrationRuntime_self-hosted": {
-			"value": "self-hosted"
+		"AmazonS31_secretAccessKey": {
+			"value": ""
+		},
+		"AmazonS32_secretAccessKey": {
+			"value": ""
 		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
@@ -24,6 +27,9 @@
 			"value": ""
 		},
 		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
 			"value": ""
 		},
 		"AzureDatabricks_accessToken": {
@@ -92,7 +98,16 @@
 		"linkedService11_servicePrincipalKey": {
 			"value": ""
 		},
-		"AzureDataLakeStorage3_accountKey": {
+		"cheprahdi_connectionString": {
+			"value": ""
+		},
+		"HDIOnDemand_clusterPassword": {
+			"value": ""
+		},
+		"HDIOnDemand_clusterSshPassword": {
+			"value": ""
+		},
+		"HDIOnDemand_servicePrincipalKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
@@ -100,6 +115,12 @@
 		},
 		"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
 			"value": "input"
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"value": "AKIAJFL4XMAASAPGMG2A"
+		},
+		"AmazonS32_properties_typeProperties_accessKeyId": {
+			"value": "AKIAJFL4XMAASAPGMG2A"
 		},
 		"AzureDataLakeAnalytics_properties_typeProperties_accountName": {
 			"value": "chepra"
@@ -121,6 +142,12 @@
 		},
 		"AzureDataLakeStorage2_properties_typeProperties_url": {
 			"value": "https://chepragen2.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://azurewalagen2.dfs.core.windows.net"
+		},
+		"AzureKeyVaultChepra_properties_typeProperties_baseUrl": {
+			"value": "https://chepra.vault.azure.net/"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"value": "C:\\AzureLearn\\"
@@ -209,8 +236,23 @@
 		"trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f/resourceGroups/chpradeep/providers/Microsoft.Storage/storageAccounts/chepra"
 		},
-		"AzureDataLakeStorage3_properties_typeProperties_url": {
-			"value": "https://azurewalagen2.dfs.core.windows.net"
+		"HDIOnDemand_properties_typeProperties_hostSubscriptionId": {
+			"value": "b83c1ed3-c5b6-44fb-b5ba-2b83a074c23f"
+		},
+		"HDIOnDemand_properties_typeProperties_clusterResourceGroup": {
+			"value": "chpradee-Analytics"
+		},
+		"HDIOnDemand_properties_typeProperties_servicePrincipalId": {
+			"value": "06ec2f57-cf96-4dee-af4c-9bb8efbd60ef"
+		},
+		"HDIOnDemand_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"HDIOnDemand_properties_typeProperties_clusterUserName": {
+			"value": "chepra"
+		},
+		"HDIOnDemand_properties_typeProperties_clusterSshUserName": {
+			"value": "chepra"
 		}
 	}
 }
