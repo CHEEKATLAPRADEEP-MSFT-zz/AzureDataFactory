@@ -22,10 +22,6 @@
 							"egg": "dbfs:/FileStore/jars/hello-1.0-py3.7.egg"
 						}
 					]
-				},
-				"linkedServiceName": {
-					"referenceName": "ADB",
-					"type": "LinkedServiceReference"
 				}
 			}
 		],
